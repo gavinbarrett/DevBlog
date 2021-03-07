@@ -1,0 +1,72 @@
+.landing-page {
+	width: 100vw;
+	background: coral;
+}
+
+.featured-home {
+	width: 100vw;
+	height: 85vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	font-family: 'Inconsolata';
+	font-size: 2vw;
+	font-weight: bold;
+}
+
+.featured-posts {
+	width: 100vw;
+	background: pink;
+}
+
+.featured-about {
+	width: 100vw;
+	height: 100vh;
+	background: magenta;
+}
+
+.landing-hook {
+	width: 80vw;
+	height: 90vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+}
+
+.recent-posts {
+	width: 100vw;
+	height: 70vh;
+	background: blue;
+}
+
+.see-posts {
+	width: 100vw;
+	height: 30vh;
+	background: orange;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.see-posts > a {
+	width: 20vw;
+	height: 8vh;
+	font-family: 'Inconsolata';
+	font-size: 2vw;
+	font-weight: bold;
+	background: black;
+	color: white;
+	border-radius: 30px;
+	transition: all 0.25s ease-in-out;
+}
+
+.see-posts > a:hover {
+	background: blue;
+	width: 20.5vw;
+	height: 8.5vh;
+	font-size: 2.1vw;
+	box-shadow: 0 4px 10px 6px rgba(0, 0, 0, 0.75);
+	cursor: default;
+}

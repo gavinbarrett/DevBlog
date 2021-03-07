@@ -1,0 +1,42 @@
+header {
+	width: 100vw;
+	height: 15vh;
+	background: blue;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.title {
+	color: black;
+	font-size: 3vw;
+	padding-left: 5vw;
+	font-family: 'Inconsolata';
+}
+
+nav {
+	color: black;
+	font-size: 2vw;
+	padding-right: 2vw;
+	display: flex;
+	padding-right: 2vw;
+}
+
+a {
+	width: 10vw;
+	height: 10vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+nav > a {
+	color: black;
+	font-family: 'Inconsolata';
+	cursor: default;
+	transition: all 0.25s ease-in-out;
+}
+
+nav > a:hover {
+	color: yellow;
+}
