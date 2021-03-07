@@ -9,9 +9,18 @@ export const Post = () => {
 	}, []);
 
 	const getPost = async () => {
+		// extract 
 		const digest = loc.pathname.split("/")[2];
-		// FIXME: check digest
-		console.log(digest);
+		//
+		if (!validDigest(digest)) return;
+		//
+		const resp = await fetch(`/get_post/?digest=${digest}`, {method: "GET"});
+		const r = await resp.json();
+		console.log(r);
+	}
+
+	const validDigest = digest => {
+		return digest.match(/^[0-9a-f]{64}$/);
 	}
 
 	return (<div>

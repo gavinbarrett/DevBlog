@@ -1,9 +1,10 @@
 const express = require("express");
 const app = express();
 const port = 5000;
+const { readPostFromDisk } = require("./database/diskUtilities.ts");
+const database = require("./database/databaseUtilities.ts");
 
 // FIXME: add disk utilities
-// FIXME: add database utilities
 
 // allow json parsing
 app.use(express.json());
@@ -12,13 +13,7 @@ app.use(express.static("./dist"));
 // disable X-Powered-By server header
 app.disable("x-powered-by")
 
-app.post('/get_post', (req, res) => {
-	console.log(req.body);
-	const { digest } = req.body;
-	console.log(`Digest: ${digest}`);
-	res.send(JSON.stringify({"status":"success"}));
-});
-
+app.get('/get_post', readPostFromDisk);
 app.listen(port, () => {
 	console.log(`Listening on port ${port}`);
 });
