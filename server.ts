@@ -1,3 +1,4 @@
+require("dotenv").config();
 const express = require("express");
 const app = express();
 const port = 5000;
@@ -14,6 +15,14 @@ app.use(express.static("./dist"));
 app.disable("x-powered-by")
 
 app.get('/get_post', readPostFromDisk);
+app.get('/get_recent', async (req, res) => {
+	const query = `select * from blogposts order by post_time`;
+	const resp = await database.query(query);
+	const r = resp.rows.slice(0, 3);
+	console.log(r);
+	res.send(JSON.stringify({"status": "success"}));
+});
+
 app.listen(port, () => {
 	console.log(`Listening on port ${port}`);
 });
