@@ -1,9 +1,28 @@
 .post-card {
 	width: 32vw;
 	height: 65vh;
-	background: blue;
+	background: #106958;
 	border-radius: 7px;
 	display: flex;
 	flex-direction: column;
-	justify-content: center;
+	justify-content: flex-start;
+	font-size: 1.5vw;
+	font-weight: bold;
+	font-family: 'Inconsolata';
+	color: #e1edeb;
+	transition: all 0.25s ease-in-out;
+}
+
+.post-card > * {
+	padding-left: 1vw;
+}
+
+.post-card:hover {
+	filter: brightness(80%);
+}
+
+.post-title {
+	font-size: 3vw;
+	word-break: break-word;
+	text-transform: capitalize;
 }

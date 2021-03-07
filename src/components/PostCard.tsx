@@ -15,8 +15,8 @@ export const PostCard = ({title, tags, hash, post_time}:postCard) => {
 		history.push(`/post/${hash}`);
 	}
 	return (<div className="post-card" onClick={getDigest}>
-		<p>{title}</p>
+		<p className="post-title">{title}</p>
 		<p>{tags}</p>
-		<p>{post_time}</p>
+		<p>{`Posted on ${post_time}`}</p>
 	</div>);
 }

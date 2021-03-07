@@ -10,9 +10,21 @@
 	justify-content: center;
 	align-items: center;
 	text-align: center;
-	font-family: 'Inconsolata';
-	font-size: 2vw;
+	font-family: 'Lucida Console', monospace;
+	font-size: 4vw;
 	font-weight: bold;
+	animation: slide 0.2s ease-in-out forwards;
+}
+
+@keyframes slide {
+	from {
+		transform: translateY(150px);
+		opacity: 0.2;
+	}
+	to {
+		transform: translateY(0);
+		opacity: 1;
+	}
 }
 
 .featured-posts {

@@ -28,7 +28,7 @@ export const LandingPage = () => {
 				<div className="post-array">
 				{recent.length ? recent.map((elem, idx) => {
 					const date: Date = new Date(Date.parse(elem.post_time));
-					return <PostCard title={elem.title} tags={elem.tags} hash={elem.hash} post_time={date.toString()}/>
+					return <PostCard title={elem.title} tags={elem.tags} hash={elem.hash} post_time={date.toLocaleString()}/>
 				}) : "Couldn't load posts o_O"}
 				</div>
 			</div>

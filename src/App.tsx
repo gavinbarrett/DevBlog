@@ -12,8 +12,9 @@ import './components/sass/App.scss';
 
 const App = () => {
 	const [postHash, changePostHash] = React.useState('');
+	const reference = React.createRef();
 	return (<div className="app-container">
-	<Header/>
+	<Header reference={reference}/>
 		<Router.Switch>
 			<Router.Route path={`/`} exact render={() => <LandingPage/>}/>
 			<Router.Route path={`/posts`} render={() => <PostsPage/>}/>
@@ -21,7 +22,7 @@ const App = () => {
 			<Router.Route path={`/about`} render={() => <AboutPage/>}/>
 			<Router.Route path={`*`} render={() => <PageNotFound/>}/>
 		</Router.Switch>
-	<Footer/>
+	<Footer reference={reference}/>
 	</div>);
 }
 

@@ -3,24 +3,39 @@ footer {
 	height: 15vh;
 	background: #106958;
 	display: flex;
-	justify-content: center;
+	justify-content: space-between;
 	align-items: center;
+}
+
+footer > * {
+	cursor: default;
 }
 
 .attributions {
 	display: flex;
+	height: 15vh;
 	justify-content: center;
 	align-items: center;
 	font-size: 1.5vw;
 	font-family: 'Inconsolata';
 	font-weight: bold;
 	color: #e1edeb;
+	padding-left: 2vw;
+	padding-right: 2vw;
 }
 
 .attributions > img {
 	width: 1.25vw;
 	height: auto;
 	padding-left: 0.5vw;
+}
+
+.to-top {
+	transition: all 0.25s ease-in-out;
+}
+
+.to-top:hover {
+	color: yellow;
 }
 
 .heart {

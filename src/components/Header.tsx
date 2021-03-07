@@ -2,8 +2,8 @@ import * as React from 'react';
 import * as Router from 'react-router-dom';
 import './sass/Header.scss';
 
-export const Header = () => {
-	return (<header>
+export const Header = ({reference}) => {
+	return (<header ref={reference}>
 		<Router.Link to="/" title="Return to Home" className="title">{"Gavin's Tech Blog"}</Router.Link>
 		<nav>
 			<Router.Link to="/">{"Home"}</Router.Link>
