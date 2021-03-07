@@ -1,6 +1,6 @@
 .landing-page {
 	width: 100vw;
-	background: coral;
+	background: #E1EDEB;
 }
 
 .featured-home {
@@ -18,13 +18,13 @@
 .featured-posts {
 	width: 100vw;
 	height: 110vh;
-	background: pink;
+	background: #E1EDEB;
 }
 
 .featured-about {
 	width: 100vw;
 	height: 100vh;
-	background: magenta;
+	background: #E1EDEB;
 }
 
 .landing-hook {
@@ -72,14 +72,13 @@
 	font-family: 'Inconsolata';
 	font-size: 2vw;
 	font-weight: bold;
-	background: black;
+	background: #106958;
 	color: white;
 	border-radius: 30px;
 	transition: all 0.25s ease-in-out;
 }
 
 .see-posts > a:hover {
-	background: blue;
 	width: 20.5vw;
 	height: 8.5vh;
 	font-size: 2.1vw;

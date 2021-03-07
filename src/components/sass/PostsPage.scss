@@ -1,5 +1,16 @@
 .posts-page {
 	width: 100vw;
-	height: 100vh;
 	background: gold;
+	overflow-y: scroll;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.posts-page > div.post-card {
+	width: 80vw;
+	height: 10vw;
+	background: red;
+	margin: 1vw;
 }

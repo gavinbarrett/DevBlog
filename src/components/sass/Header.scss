@@ -1,7 +1,7 @@
 header {
 	width: 100vw;
 	height: 15vh;
-	background: blue;
+	background: #106958;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
@@ -13,6 +13,7 @@ header {
 	color: black;
 	font-size: 3vw;
 	font-family: 'Inconsolata';
+	color: #e1edeb;
 }
 
 .title:hover {
@@ -25,6 +26,7 @@ nav {
 	padding-right: 2vw;
 	display: flex;
 	padding-right: 2vw;
+	color: #e1edeb;
 }
 
 a {
@@ -36,7 +38,7 @@ a {
 }
 
 nav > a {
-	color: black;
+	color: #e1edeb;
 	font-family: 'Inconsolata';
 	cursor: default;
 	transition: all 0.25s ease-in-out;

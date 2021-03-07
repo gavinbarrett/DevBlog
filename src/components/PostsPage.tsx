@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { PostCard } from './PostCard';
 import './sass/PostsPage.scss';
 
 export const PostsPage = () => {
@@ -16,7 +17,8 @@ export const PostsPage = () => {
 
 	return (<div className="posts-page">
 		{posts.length ? posts.map((elem, idx) => {
-			return <p>{elem.title}</p>;
+			const date: Date = new Date(Date.parse(elem.post_time));
+			return <PostCard title={elem.title} tags={elem.tags} hash={elem.hash} post_time={date.toString()}/>;
 		}) : "Couldn't load posts."}
 	</div>);
 }
