@@ -5,7 +5,7 @@
 
 .featured-home {
 	width: 100vw;
-	height: 85vh;
+	height: 100vh;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -17,6 +17,7 @@
 
 .featured-posts {
 	width: 100vw;
+	height: 110vh;
 	background: pink;
 }
 
@@ -38,13 +39,11 @@
 .recent-posts {
 	width: 100vw;
 	height: 70vh;
-	background: blue;
 }
 
 .see-posts {
 	width: 100vw;
 	height: 30vh;
-	background: orange;
 	display: flex;
 	justify-content: center;
 	align-items: center;

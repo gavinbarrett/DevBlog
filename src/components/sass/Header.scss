@@ -8,10 +8,15 @@ header {
 }
 
 .title {
+	width: 30vw;
+	height: 15vh;
 	color: black;
 	font-size: 3vw;
-	padding-left: 5vw;
 	font-family: 'Inconsolata';
+}
+
+.title:hover {
+	cursor: default;
 }
 
 nav {

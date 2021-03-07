@@ -3,13 +3,12 @@ html, body {
 	height: 100vh;
 	margin: 0;
 	padding: 0;
-	overflow-y: scroll;
-	overflow-x: hidden;
 }
 
 #root {
 	width: 100vw;
 	height: 100vh;
+	overflow-x: hidden;
 }
 
 a {
@@ -22,6 +21,4 @@ a {
 	background: orange;
 	display: flex;
 	flex-direction: column;
-	overflow-y: scroll;
-	overflow-x: hidden;
 }
