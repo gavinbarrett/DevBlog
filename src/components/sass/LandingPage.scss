@@ -38,12 +38,29 @@
 
 .recent-posts {
 	width: 100vw;
-	height: 70vh;
+	height: 90vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+	align-items: space-evenly;
+}
+
+.recent-title {
+	font-size: 2vw;
+	font-family: 'Inconsolata';
+	font-weight: bold;
+	padding-left: 2vw;
+}
+
+.post-array {
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
 }
 
 .see-posts {
 	width: 100vw;
-	height: 30vh;
+	height: 10vh;
 	display: flex;
 	justify-content: center;
 	align-items: center;

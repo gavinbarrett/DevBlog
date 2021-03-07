@@ -1,5 +1,6 @@
 import * as React from 'react';
 import * as Router from 'react-router-dom';
+import './sass/Post.scss';
 
 export const Post = () => {
 	const [loc, updateLoc] = React.useState(Router.useLocation());
@@ -23,7 +24,7 @@ export const Post = () => {
 		return digest.match(/^[0-9a-f]{64}$/);
 	}
 
-	return (<div>
+	return (<div className="displayed-post">
 		{"post"}
 	</div>);
 }
