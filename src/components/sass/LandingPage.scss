@@ -38,6 +38,25 @@
 	width: 100vw;
 	height: 100vh;
 	background: #E1EDEB;
+	display: flex;
+}
+
+.about-text {
+	width: 50vw;
+	height: 100vh;
+	background: #E1EDEB;
+	font-size: 10vw;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding-left: 2vw;
+	font-family: 'Inconsolata', monospace;
+}
+
+.about-attributes {
+	width: 50vw;
+	height: 100vh;
+	background: cyan;
 }
 
 .landing-hook {
@@ -63,6 +82,7 @@
 	font-family: 'Inconsolata';
 	font-weight: bold;
 	padding-left: 2vw;
+	background: #E1EDEB;
 }
 
 .post-array {

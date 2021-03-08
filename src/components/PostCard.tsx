@@ -16,7 +16,9 @@ export const PostCard = ({title, tags, hash, post_time}:postCard) => {
 	}
 	return (<div className="post-card" onClick={getDigest}>
 		<p className="post-title">{title}</p>
-		<p className="post-tags">{tags}</p>
-		<p className="">{`Posted on ${post_time}`}</p>
+		<div className="metadata">
+			<p className="post-tags">{tags}</p>
+			<p className="post-time">{`Posted on ${post_time}`}</p>
+		</div>
 	</div>);
 }

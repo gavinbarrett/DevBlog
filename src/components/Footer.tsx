@@ -11,7 +11,7 @@ export const Footer = ({reference}) => {
 
 	return (<footer>
 		<div className="attributions">
-			{`GTech.blog \u00A9 2021`}
+			{`gtech.blog 2021 \u00A9`}
 		</div>
 		<div className="attributions">
 			{`This blog is made with `}

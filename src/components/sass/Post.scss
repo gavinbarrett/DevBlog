@@ -1,4 +1,23 @@
 .displayed-post {
 	width: 100vw;
 	height: 85vh;
+	display: flex;
+	justify-content: center;
+}
+
+#container {
+	width: 85vw;
+}
+
+#container > h3 {
+	font-size: 3.5vw;
+	font-family: 'Inconsolata', monospace;
+	text-align: center;
+	color: #106958;
+}
+
+#container > section {
+	margin-top: 3%;
+	font-size: 1.6vw;
+	font-family: 'Inconsolata', monospace;
 }

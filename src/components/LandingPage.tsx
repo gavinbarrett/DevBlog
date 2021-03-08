@@ -37,7 +37,11 @@ export const LandingPage = () => {
 			</div>
 		</div>
 		<div className="featured-about">
-
+			<div className="about-text">
+				{"A b1t ab0ut me"}
+			</div>
+			<div className="about-attributes">
+			</div>
 		</div>
 	</div>);
 }
