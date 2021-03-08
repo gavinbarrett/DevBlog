@@ -42,6 +42,8 @@ export const LandingPage = () => {
 				<p>{"ab0ut me"}</p>
 			</div>
 			<div className="about-attributes">
+				<section>I started programming</section>
+				<section>Today my favorite</section>
 			</div>
 		</div>
 	</div>);

@@ -64,7 +64,18 @@
 .about-attributes {
 	width: 50vw;
 	height: 100vh;
-	background: cyan;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+	align-items: center;
+}
+
+.about-attributes > section {
+	background: green;
+	width: 40vw;
+	height: 30vh;
+	font-family: 'Inconsolata';
+	font-size: 1.5vw;
 }
 
 .landing-hook {
