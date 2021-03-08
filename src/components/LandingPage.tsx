@@ -38,7 +38,8 @@ export const LandingPage = () => {
 		</div>
 		<div className="featured-about">
 			<div className="about-text">
-				{"A b1t ab0ut me"}
+				<p>{"A b1t"}</p>
+				<p>{"ab0ut me"}</p>
 			</div>
 			<div className="about-attributes">
 			</div>
