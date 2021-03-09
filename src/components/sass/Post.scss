@@ -12,25 +12,44 @@
 }
 
 #container > h3 {
-	font-size: 3.5vw;
+	font-size: 4rem;
+	//font-size: 3.5vw;
 	font-family: 'Inconsolata', monospace;
 	text-align: center;
 	color: #106958;
+	margin-top: 5vh;
+	margin-bottom: 1vh;
 }
 
 #container > section {
-	margin-top: 3%;
-	font-size: 1.6vw;
+	margin-top: 2%;
+	margin-bottom: 2%;
+	font-size: 1.35rem;
 	font-family: 'Inconsolata', monospace;
 }
 
 #container > div.img-wrapper {
 	width: 100vw;
 	display: flex;
+	flex-direction: column;
 	justify-content: center;
+	align-items: center;
+	margin-top: 6vh;
+	margin-bottom: 6vh;
+	font-family: 'Inconsolata', monospace;
+	font-weight: bold;
+	color: #106958;
+}
+
+#container > p {
+	font-family: 'Inconsolata', monospace;
+	font-weight: bold;
+	color: #106958;
+	padding: 0;
+	margin-bottom: 1vh;
 }
 
 .img-wrapper > img {
-	width: 60vw;
+	width: 80vw;
 	height: auto;
 }

@@ -15,8 +15,11 @@
 	font-family: 'Lucida Console', monospace;
 	font-size: 4vw;
 	font-weight: bold;
-	animation: slide 0.28s ease-in-out forwards;
 	color: #084237;
+	background-image: url('assets/future.jpg');
+	background-size: cover;
+	background-color: #67a695;
+	background-blend-mode: screen;
 }
 
 @keyframes slide {
@@ -53,12 +56,14 @@
 	justify-content: center;
 	align-items: flex-start;
 	font-family: 'Londrina Outline', cursive;
-	padding-left: 2.5vw;
+	padding-left: 3.5vw;
 }
 
 .about-text > p {
 	padding: 0;
 	margin: 0;
+	padding-top: 2.5vh;
+	padding-bottom: 2.5vh;
 }
 
 .about-attributes {
@@ -85,6 +90,7 @@
 	justify-content: center;
 	align-items: center;
 	text-align: center;
+	animation: slide 0.28s ease-in-out forwards;
 }
 
 .recent-posts {

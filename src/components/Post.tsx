@@ -45,5 +45,6 @@ export const Post = () => {
 
 	return (<div className="displayed-post">
 		{postContent ? <div id="container" dangerouslySetInnerHTML={{__html: postContent}}/> : "Could not retrieve post."}
+
 	</div>);
 }
