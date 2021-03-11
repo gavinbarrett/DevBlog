@@ -11,10 +11,10 @@ export const Footer = ({reference}) => {
 
 	return (<footer>
 		<div className="attributions">
-			{`gtech.blog 2021 \u00A9`}
+			{`gtech 2021 \u00A9`}
 		</div>
 		<div className="attributions">
-			{`This blog is made with `}
+			{`Made with `}
 			<p className="heart">{` \u2764 `}</p>
 			{` and React`}
 			<img src="./react-logo.png"/>

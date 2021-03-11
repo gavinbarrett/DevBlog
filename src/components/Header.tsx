@@ -8,7 +8,7 @@ export const Header = ({reference}) => {
 		<nav>
 			<Router.Link to="/">{"Home"}</Router.Link>
 			<Router.Link to="/posts">{"Posts"}</Router.Link>
-			<Router.Link to="/about">{"About"}</Router.Link>
+			{/*<Router.Link to="/about">{"About"}</Router.Link>*/}
 		</nav>
 	</header>);
 }

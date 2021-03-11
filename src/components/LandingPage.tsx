@@ -42,8 +42,8 @@ export const LandingPage = () => {
 				<p>{"ab0ut me"}</p>
 			</div>
 			<div className="about-attributes">
-				<section>I started programming</section>
-				<section>Today my favorite</section>
+				<section>I started hacking a few years ago, after realizing the threat posed by the pervasive existence of networked, data collecting devices.</section>
+				<section>Nowadays I strive to clear the fog around technology and, through it, lead others to liberation instead of subjugation.</section>
 			</div>
 		</div>
 	</div>);
