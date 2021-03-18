@@ -3,9 +3,7 @@ const fs = require('fs');
 exports.readPostFromDisk = async (req, res) => {
 	const digest = req.query["digest"];
 	if (validDigest(digest)) {
-		console.log(`Valid hash, getting ${digest}...`);
 		const resp = await getPostFromDisk(digest);
-		console.log(`Retrieved ${resp}`);
 		if (resp)
 			res.send(JSON.stringify({"post": resp}));
 		else

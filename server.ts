@@ -19,7 +19,6 @@ app.get('/get_all', async (req, res) => {
 	const query = `select * from blogposts order by post_time desc`;
 	// query database
 	const rows = await database.query(query);
-	console.log(rows);
 	res.send(JSON.stringify({"rows": rows.rows}));
 });
 app.get('/get_recent', async (req, res) => {
