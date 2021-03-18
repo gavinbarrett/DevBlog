@@ -1,15 +1,31 @@
 .posts-page {
 	width: 100vw;
+	height: 85vh;
 	background: #E1EDEB;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
+	overflow-y: scroll;
 }
 
 .posts-page > div.post-card {
-	width: 80vw;
+	width: 98vw;
 	height: 10vw;
+	flex-direction: row;
 	background: #106958;
-	margin: 1vw;
+	border-radius: 0;
+	margin: 1rem;
+}
+
+div.post-card > div.metadata {
+	margin-right: 10vw;
+}
+
+.waiting {
+	width: 100vw;
+	height: 85vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }

@@ -78,8 +78,15 @@
 .about-attributes > section {
 	width: 40vw;
 	height: 30vh;
-	font-family: 'Inconsolata';
-	font-size: 2vw;
+	font-family: 'Inconsolata', monospace;
+	font-size: 2.5vw;
+}
+
+.bubble {
+	width: 10px;
+	height: 10px;
+	background: red;
+	border-radius: 50%;
 }
 
 .landing-hook {
@@ -124,21 +131,27 @@
 }
 
 .see-posts > a {
-	width: 20vw;
+	width: 40vw;
 	height: 8vh;
 	font-family: 'Inconsolata';
-	font-size: 2vw;
+	font-size: 1.5rem;
 	font-weight: bold;
 	background: #106958;
 	color: white;
 	border-radius: 30px;
 	transition: all 0.25s ease-in-out;
+	@media(min-width: 1000px) {
+		width: 20vw;
+	}
 }
 
 .see-posts > a:hover {
-	width: 20.5vw;
+	width: 40.5vw;
 	height: 8.5vh;
-	font-size: 2.1vw;
+	font-size: 1.6rem;
 	box-shadow: 0 4px 10px 6px rgba(0, 0, 0, 0.75);
 	cursor: default;
+	@media(min-width: 1000px) {
+		width: 20.5vw;
+	}
 }

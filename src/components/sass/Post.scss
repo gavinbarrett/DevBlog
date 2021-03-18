@@ -26,6 +26,7 @@
 	margin-bottom: 2%;
 	font-size: 1.35rem;
 	font-family: 'Inconsolata', monospace;
+	width: 85vw;
 }
 
 #container > div.img-wrapper {
@@ -49,7 +50,38 @@
 	margin-bottom: 1vh;
 }
 
+#container > code {
+	width: 70vw;
+	background: #2F3649;
+	padding: 2rem;
+	margin: 1rem;
+	color: #E1EDEB;
+	border-radius: 20px;
+	font-size: 1.25rem;
+	cursor: default;
+}
+
+p.indent-1 {
+	margin-left: 3vw;
+}
+
+p.indent-2 {
+	margin-left: 6vw;
+}
+
+p.indent-3 {
+	margin-left: 9vw;
+}
+
 .img-wrapper > img {
-	width: 80vw;
+	width: 60vw;
 	height: auto;
+}
+
+.waiting {
+	width: 100vw;
+	height: 85vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }

@@ -1,6 +1,6 @@
 .post-card {
 	width: 32vw;
-	height: 65vh;
+	height: 35vh;
 	background: #106958;
 	border-radius: 7px;
 	display: flex;
@@ -11,6 +11,9 @@
 	font-family: 'Inconsolata';
 	color: #e1edeb;
 	transition: all 0.25s ease-in-out;
+	@media(min-width: 1000px) {
+		height: 65vh;
+	}
 }
 
 .post-card > * {

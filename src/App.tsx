@@ -1,6 +1,7 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import * as Router from 'react-router-dom';
+import { ScrollToTop } from './components/ScrollToTop';
 import { Header } from './components/Header';
 import { LandingPage } from './components/LandingPage';
 import { PostsPage } from './components/PostsPage';
@@ -13,7 +14,8 @@ import './components/sass/App.scss';
 const App = () => {
 	const [postHash, changePostHash] = React.useState('');
 	const reference = React.createRef();
-	return (<div className="app-container">
+	return (<><ScrollToTop/>
+	<div className="app-container">
 	<Header reference={reference}/>
 		<Router.Switch>
 			<Router.Route path={`/`} exact render={() => <LandingPage/>}/>
@@ -23,7 +25,7 @@ const App = () => {
 			<Router.Route path={`*`} render={() => <PageNotFound/>}/>
 		</Router.Switch>
 	<Footer reference={reference}/>
-	</div>);
+	</div></>);
 }
 
 ReactDOM.render(<Router.HashRouter><App/></Router.HashRouter>, document.getElementById("root"));

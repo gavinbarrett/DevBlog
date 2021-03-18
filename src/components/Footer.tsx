@@ -2,16 +2,14 @@ import * as React from 'react';
 import './sass/Footer.scss';
 
 export const Footer = ({reference}) => {
-
 	const scrollToTop = event => {
 		event.preventDefault();
-		console.log('Scrolling');
+		// scroll to the top of the page
 		reference.current.scrollIntoView({behavior: 'smooth', block: 'end'});
 	}
-
 	return (<footer>
 		<div className="attributions">
-			{`gtech 2021 \u00A9`}
+			{`getch 2021 \u00A9`}
 		</div>
 		<div className="attributions">
 			{`Made with `}

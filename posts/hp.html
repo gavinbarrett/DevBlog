@@ -1,0 +1,58 @@
+<!-- Post title goes here -->
+<h3>Building an Intuition for the Halting Problem</h3>
+
+<p>Posted on 3/11/2021 10:22:55 AM</p>
+
+<p>undecidability</p>
+
+<section>That halting problem is a very well known and mysterious problem in the field of computer science. Here we will be exploring some its implications and will use this for building an intuition for its proofs. We will be using some small formal definitions and some simple Python code to arrive at the undecidability of the halting problem.</section>
+
+<section><b>Decidability</b> - In a logical system, a formula is decidable if, for every possible variable assignment for that formula, it can be determined to either be decisively true or false. Similarly, a <b>Turing machine</b> is decidable if every input to the Turing machine yields either true or false as its output.</section>
+
+<section>So the halting problem is undecidable. How do we prove this? We can use our trusty logic skills to perform a <b>proof by contradiction</b>.</section>
+
+<section>Since we wish to prove (by contradiction) that the halting problem is undecideable, we will assume that its negation is true.</section>
+
+<section><b>Assumption:</b> The halting problem is decidable.</section>
+
+<section>If the halting problem is decidable, then there must exist a decider Turing machine that runs the algorithm; so we are allowed to infer that there exists some `algorithm` that does precisely this.</section>
+
+<section>But what exactly is an algorithm? To be brief: A mechanical procedure for producing something in a finite amount of steps.
+There are many ways we can describe algorithms, we might consider our algorithm to be a black box machine that takes in our input, and delivers our output.</section>
+
+<div class="img-wrapper">
+	<img src="images/TM_program1.png"/>
+</div>
+
+<section>It might also be helpful to visualize this with a little bit of code; we can describe the halting algorithm with a simple Python function. Imagine we have something like the following:</section>
+
+<code>
+def halt(M):
+<p class="indent-1">''' Return True if M halts, False if M does not halt '''</p>
+<p class="indent-1">...</p>
+</code>
+
+<section>The details of how this function would work aren't important; in fact, the algorithm can't be described because it doesn't exist. But importantly, on our assumption, the function is defined for <b>all</b> inputs.</section>
+
+<section>In the case of Turing Machines, we are passing in string encodings of our Turing Machine. In our Python code example, we are passing in a subroutine.</section>
+
+<section>Now to derive the contradiction, we need to build a <b>contrarian</b> algorithm, that responds to the output of this halting function and does the exact opposite. But an important caveat of this is that the algorithm that we build to contradict our halting output is the same algorithm that we pass into the halting function to determine if it halts or not.</section>
+
+<div class="img-wrapper">
+	<img src="images/modded_TM.png"/>
+</div>
+
+<section>If we visualize it in code, we can see the contradiction more explicitly.</section>
+
+<code>
+def contrarian():
+<br/>
+<p class="indent-1">if halt(contrarian):</p>
+<p class="indent-2">while True: continue	# program loops infinitely (doesn't halt)</p>
+<br/>
+<p class="indent-1">print("Halting")			# program ends (halts)</p>
+</code>
+
+<section>If our halting function determines that our contrarian function will halt, the contrarian function begins executing an infinite loop. If the function returns false, the contrarian function will print a statement and terminate, halting running the program. So if it halts, it doesn't halt, and if it doesn't halt, it halts. Doesn't seem very sound, does it? We can't in good faith believe that this contrarian function can be built unless we also bite the bullet and eschew the laws of classical logic. The reasonable solution is to deny our assumption that the halting problem is decidable. Our logic looks roughly like this:
+</br>
+If the halting problem is decidable, then we can build an algorithm that will correctly predict whether any combination of program and input will halt or not. Since we have shown that we cannot build such an algorithm (because of the contrarian program is an exception to this), then we can conclude that the halting problem must be undecidable.</section>

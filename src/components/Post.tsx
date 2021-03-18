@@ -2,6 +2,12 @@ import * as React from 'react';
 import * as Router from 'react-router-dom';
 import './sass/Post.scss';
 
+const Waiting = () => {
+	return (<div className="waiting">
+		{"Waiting for post."}
+	</div>);
+}
+
 export const Post = () => {
 	const [loc, updateLoc] = React.useState(Router.useLocation());
 	const [postContent, updatePostContent] = React.useState();
@@ -49,6 +55,6 @@ export const Post = () => {
 	}
 
 	return (<div className="displayed-post">
-		{postContent ? <div id="container" dangerouslySetInnerHTML={{__html: postContent}}/> : "Could not retrieve post."}
+		{postContent ? <div id="container" dangerouslySetInnerHTML={{__html: postContent}}/> : <Waiting/>}
 	</div>);
 }

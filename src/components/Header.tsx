@@ -3,7 +3,7 @@ import * as Router from 'react-router-dom';
 import './sass/Header.scss';
 
 export const Header = ({reference}) => {
-	return (<header ref={reference}>
+	return (<header id="header" ref={reference}>
 		<Router.Link to="/" title="Return to Home" className="title">{"gtech.blog"}</Router.Link>
 		<nav>
 			<Router.Link to="/">{"Home"}</Router.Link>
