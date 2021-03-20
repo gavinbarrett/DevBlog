@@ -1,7 +1,7 @@
 require("dotenv").config();
 const express = require("express");
 const app = express();
-const port = 5000;
+const port = 8000;
 const { readPostFromDisk } = require("./database/diskUtilities.ts");
 const database = require("./database/databaseUtilities.ts");
 
