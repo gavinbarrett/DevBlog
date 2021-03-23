@@ -16,13 +16,13 @@ app.disable("x-powered-by")
 
 app.get('/get_post', readPostFromDisk);
 app.get('/get_all', async (req, res) => {
-	const query = `select * from blogposts order by post_time desc`;
+	const query = `select * from posts order by post_time desc`;
 	// query database
 	const rows = await database.query(query);
 	res.send(JSON.stringify({"rows": rows.rows}));
 });
 app.get('/get_recent', async (req, res) => {
-	const query = `select * from blogposts order by post_time desc`;
+	const query = `select * from posts order by post_time desc`;
 	// query database
 	const resp = await database.query(query);
 	// extract three most recent posts
