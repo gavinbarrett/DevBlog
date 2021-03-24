@@ -9,7 +9,7 @@ export const Footer = ({reference}) => {
 	}
 	return (<footer>
 		<div className="attributions">
-			{`getch 2021 \u00A9`}
+			{`urandom 2021 \u00A9`}
 		</div>
 		<div className="attributions">
 			{`Made with `}
