@@ -12,21 +12,26 @@
 }
 
 #container > h3 {
-	font-size: 4rem;
-	//font-size: 3.5vw;
+	font-size: 2rem;
 	font-family: 'Inconsolata', monospace;
 	text-align: center;
 	color: #106958;
 	margin-top: 5vh;
 	margin-bottom: 1vh;
+	@media (min-width: 600px) {
+		font-size: 4rem;
+	}
 }
 
 #container > section {
 	margin-top: 2%;
 	margin-bottom: 2%;
-	font-size: 1.35rem;
+	font-size: 1.2rem;
 	font-family: 'Inconsolata', monospace;
 	width: 85vw;
+	@media (min-width: 600px) {
+		font-size: 2rem;
+	}
 }
 
 #container > div.img-wrapper {
@@ -51,7 +56,7 @@
 }
 
 #container > code {
-	width: 70vw;
+	width: 85vw;
 	background: #2F3649;
 	padding: 2rem;
 	margin: 1rem;
@@ -59,6 +64,9 @@
 	border-radius: 20px;
 	font-size: 1.25rem;
 	cursor: default;
+	@media (min-width: 600px) {
+		width: 70vw;
+	}
 }
 
 p.indent-1 {
@@ -74,8 +82,11 @@ p.indent-3 {
 }
 
 .img-wrapper > img {
-	width: 60vw;
+	width: 85vw;
 	height: auto;
+	@media (min-width: 600px) {
+		width: 70vw;
+	}
 }
 
 .waiting {

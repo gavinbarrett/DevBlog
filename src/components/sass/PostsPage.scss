@@ -1,6 +1,5 @@
 .posts-page {
 	width: 100vw;
-	height: 85vh;
 	background: #E1EDEB;
 	display: flex;
 	flex-direction: column;
@@ -10,12 +9,12 @@
 }
 
 .posts-page > div.post-card {
-	width: 98vw;
+	width: 85vw;
 	height: 10vw;
 	flex-direction: row;
 	background: #106958;
 	border-radius: 0;
-	margin: 1rem;
+	margin: 2rem;
 }
 
 div.post-card > div.metadata {
