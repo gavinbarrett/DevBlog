@@ -1,2 +1,2 @@
-## urandom
-This is a personal blog for my thoughts and prototypes.
+## urandom.blog
+This project is for blogging about my experiences as a developer and sharing knowledge with others.
