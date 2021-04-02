@@ -22,19 +22,25 @@ header {
 
 nav {
 	color: black;
-	font-size: 2vw;
+	font-size: 3.5vw;
 	padding-right: 2vw;
 	display: flex;
 	padding-right: 2vw;
 	color: #e1edeb;
+	@media (min-width: 800px) {
+		font-size: 2vw;
+	}
 }
 
 a {
-	width: 10vw;
+	width: 15vw;
 	height: 10vh;
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	@media (min-width: 800px) {
+		width: 10vw;
+	}
 }
 
 nav > a {

@@ -5,7 +5,7 @@
 <p>undecidability</p>
 
 <!-- intro paragraph -->
-<section>That halting problem is very well known in the field of computer science; it states that no computer program can exist that can determine whether or not any program will terminate. Its proof has massive implications for philosophy, mathematics, and computer science because it describes some of the limits of computation. Here we will be using some informal definitions and some simple Python code to demonstrate the undecidability of the halting problem.</section>
+<section>That halting problem is very well known in the field of computer science; it states that no computer program can exist that can determine whether or not any program will terminate. Its proof has massive implications for philosophy, mathematics, and computer science because it describes some of the limits of computation. If we know that a function isn't computable by a Turing machine, then we wouldn't waste our time trying to solve the problem as we would have proven that a general solution doesn't exist. It might seem daunting to prove that no machine can undertake this task; you might get the impression that we would have to analyze every possible Turing machine, but thankfully we have a useful trick to help us. We will be using some informal definitions and some simple Python code to demonstrate the undecidability of the halting problem.</section>
 
 <!-- decidability definition -->
 <section><b>Decidability</b> - A <b>Turing machine</b> is decidable if every input to the Turing machine yields one of two possible outputs.</section>
@@ -55,7 +55,7 @@
 <p>def H(x, x):</p>
 <p class="indent-1">''' Return True if x halts on input x, False if x does not halt on x'''</p>
 <br/>
-<p>H(x)</p>
+<p>H(x, x)</p>
 </code>
 
 <section>Imagine that this function will work for any possible program passed to it, and that it will correctly determine whether or not the program will halt. To show that this algorithm can't exist, we need to build a <b>contrarian algorithm C</b>, that responds to the output of our halting oracle and does the exact opposite.</section> 
@@ -113,4 +113,4 @@
 <!-- rejecting the assumption/proving undecidability of hp -->
 <section>If our halting oracle H determines that our contrarian function C will halt, the contrarian function begins executing an infinite loop, thus not halting. If the halting function returns false, the contrarian function will print a statement and terminate, halting the program. So if C is determined to halt, then it doesn't halt, and if it's determined not to halt, then it halts. Doesn't seem very sound, does it? This program can't be both true and false on the same input, so in order to avoid dealing with the contradiction, we infer that our initial assumption about the halting problem must've been wrong. The reasonable solution is to deny this assumption and conclude that the halting problem is undecidable. To summarize this informal proof, our logic looks roughly like this:</section>
 
-<section>If the halting problem is decidable, then we can build an algorithm that will correctly predict whether any program will halt or not. Since we have shown that we cannot build such an algorithm (because of the contrarian program is an exception to this), then we can conclude that the halting problem must be undecidable.</section>
+<section>If the halting problem is decidable, then we can build an algorithm that will correctly predict whether any program will halt or not. Since we have shown that we cannot build such an algorithm (because the contrarian program is an exception to this), then we have to conclude that the halting problem must be undecidable.</section>
