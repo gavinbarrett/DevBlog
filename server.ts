@@ -15,19 +15,37 @@ app.use(express.static("./dist"));
 app.disable("x-powered-by")
 
 app.get('/get_post', readPostFromDisk);
+
 app.get('/get_all', async (req, res) => {
 	const query = `select * from posts order by post_time desc`;
-	// query database
-	const rows = await database.query(query);
-	res.send(JSON.stringify({"rows": rows.rows}));
+	try {
+		// query database
+		const rows = await database.query(query);
+		if (rows && rows.rows.length)
+			res.send(JSON.stringify({"rows": rows.rows}));
+		else
+			res.send(JSON.stringify({"rows": "failed"}));
+	} catch (err) {
+		console.log(`Error: ${err}`);
+		res.send(JSON.stringify({"rows": "failed"}));
+	}
 });
+
 app.get('/get_recent', async (req, res) => {
 	const query = `select * from posts order by post_time desc`;
-	// query database
-	const resp = await database.query(query);
-	// extract three most recent posts
-	const rows = resp.rows.slice(0, 3);
-	res.send(JSON.stringify({"rows": rows}));
+	try {
+		// query database
+		const rows = await database.query(query);
+		if (rows && rows.rows.length) {
+			// extract three most recent posts
+			const slicedRows = rows.rows.slice(0, 3);
+			res.send(JSON.stringify({"rows": slicedRows}));
+		} else
+			res.send(JSON.stringify({"rows": "failed"}));
+	} catch (err) {
+		console.log(`Error: ${err}`);
+		res.send(JSON.stringify({"rows": "failed"}));
+	}
 });
 
 app.listen(port, () => {

@@ -10,17 +10,15 @@ const Waiting = () => {
 
 export const PostsPage = () => {
 	const [posts, updatePosts] = React.useState([]);
-
 	React.useEffect(() => {
 		getAllPosts();
 	}, []);
-
 	const getAllPosts = async () => {
 		const resp = await fetch('/get_all', {method: 'GET'});
 		const r = await resp.json();
-		updatePosts(r.rows);
+		if (r.rows !== "failed")
+			updatePosts(r.rows);
 	}
-
 	return (<div className="posts-page">
 		{posts.length ? posts.map((elem, idx) => {
 			const date: Date = new Date(Date.parse(elem.post_time));

@@ -2,14 +2,19 @@ const fs = require('fs');
 
 exports.readPostFromDisk = async (req, res) => {
 	const digest = req.query["digest"];
-	if (validDigest(digest)) {
-		const resp = await getPostFromDisk(digest);
-		if (resp)
-			res.send(JSON.stringify({"post": resp}));
-		else
-			res.send(JSON.stringify({"post": null}));
-	} else
-		res.send(JSON.stringify({"post": null}));
+	try {
+		if (validDigest(digest)) {
+			const resp = await getPostFromDisk(digest);
+			if (resp)
+				res.send(JSON.stringify({"post": resp}));
+			else
+				res.send(JSON.stringify({"post": "failed"}));
+		} else
+			res.send(JSON.stringify({"post": "failed"}));
+	} catch(err) {
+		console.log(`Error: ${err}`);
+		res.send(JSON.stringify({"post": "failed"}));
+	}
 }
 
 const validDigest = async (digest) => {

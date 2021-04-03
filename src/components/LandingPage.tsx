@@ -5,17 +5,15 @@ import './sass/LandingPage.scss';
 
 export const LandingPage = () => {
 	const [recent, updateRecent] = React.useState([]);
-
 	React.useEffect(() => {
 		getRecentPosts()
 	}, []);
-
 	const getRecentPosts = async () => {
 		const resp = await fetch('/get_recent', {method: 'GET'});
 		const robj = await resp.json();
-		updateRecent(robj.rows);
+		if (robj.rows !== "failed")
+			updateRecent(robj.rows);
 	}
-
 	return (<div className="landing-page">
 		<div className="featured-home">
 			<section className="landing-hook">
