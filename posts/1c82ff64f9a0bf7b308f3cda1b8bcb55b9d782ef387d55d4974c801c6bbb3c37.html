@@ -1,6 +1,6 @@
 <h3>Building an Intuition for the Halting Problem</h3>
 
-<p>Posted on 4/02/2021 10:22:55 AM</p>
+<p>Posted on 4/02/2021 10:22:55 PM</p>
 
 <p>undecidability</p>
 
@@ -11,7 +11,7 @@
 <section><b>Decidability</b> - A <b>Turing machine</b> is decidable if every input to the Turing machine yields one of two possible outputs.</section>
 
 <!-- halting vs non-halting code -->
-<section>Just as the Turing machine can halt, it can also fail to halt. Failing to halt does not necessarily mean the program has entered into an infinite loop; some program and input combinations just take an incredibly long time to execute (e.g. brute forcing a 256-bit key). The logic of most programs can be determined pretty easily, take this Python code for example:</section>
+<section>Most of us want our computer programs to terminate. Not terminating implies two possibilities; either your program has fallen into an infinite loop, or your computation is still running; some program and input combinations just take an incredibly long time to execute (e.g. brute forcing a 256-bit key). It would be handy if we could distinguish which functions will halt, but simply <i>have yet to</i>, and which functions will never halt. The behavior of some programs can be determined pretty easily; take this Python code for example:</section>
 
 <code>
 <p>def halt():</p>
@@ -20,7 +20,7 @@
 <p>halt()</p>
 </code>
 
-<section>This code clearly prints a message and finishes execution, halting the program. This is distinct from sections of code that loop indefinitely like the following:</section>
+<section>This code clearly prints a message and finishes execution, halting the subroutine. This is distinct from sections of code that loop indefinitely like the following:</section>
 
 <code>
 <p>def loop():</p>
