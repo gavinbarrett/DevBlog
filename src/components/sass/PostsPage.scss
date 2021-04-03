@@ -1,10 +1,12 @@
 .posts-page {
 	width: 100vw;
+	height: 85vh;
 	background: #E1EDEB;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
+	padding-top: 20%;
 	overflow-y: scroll;
 }
 
@@ -13,8 +15,10 @@
 	height: 10vw;
 	flex-direction: row;
 	background: #106958;
-	border-radius: 0;
+	border-radius: 15px;
 	margin: 2rem;
+	padding: 1.2rem;
+	cursor: default;
 }
 
 div.post-card > div.metadata {
