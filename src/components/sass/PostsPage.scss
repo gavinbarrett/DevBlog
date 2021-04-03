@@ -1,12 +1,10 @@
 .posts-page {
 	width: 100vw;
-	height: 85vh;
 	background: #E1EDEB;
 	display: flex;
 	flex-direction: column;
-	justify-content: center;
+	justify-content: space-evenly;
 	align-items: center;
-	padding-top: 20%;
 	overflow-y: scroll;
 }
 
