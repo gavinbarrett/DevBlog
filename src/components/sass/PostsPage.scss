@@ -1,9 +1,10 @@
 .posts-page {
 	width: 100vw;
+	height: 85vh;
 	background: #E1EDEB;
 	display: flex;
 	flex-direction: column;
-	justify-content: space-evenly;
+	justify-content: flex-start;
 	align-items: center;
 	overflow-y: scroll;
 }
