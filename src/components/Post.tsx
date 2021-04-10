@@ -12,7 +12,7 @@ export const Post = () => {
 	const [loc, updateLoc] = React.useState(Router.useLocation());
 	const [postContent, updatePostContent] = React.useState();
 	React.useEffect(() => {
-		getPost();
+			getPost();
 	}, []);
 	const pad = (char) => {
 		if (char.length == 1)

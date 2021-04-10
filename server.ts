@@ -48,6 +48,25 @@ app.get('/get_recent', async (req, res) => {
 	}
 });
 
+app.get('/get_posts/:query_regex', async (req, res) => {
+	const { query_regex } = req.params;
+	try {
+		if (query_regex.match(/([a-z0-9] ?)+/i)) {
+			const query = `select * from posts where title ~* $1 or tags ~* $1`
+			const values = [query_regex];
+			const rows = await database.query(query, values);
+			if (rows && rows.rows.length) {
+				res.send(JSON.stringify({"rows": rows.rows}));
+			} else
+				res.send(JSON.stringify({"rows": "failed"}));
+		} else
+			throw "Invalid query";
+	} catch (err) {
+		console.log(`Error: ${err}`);
+		res.send(JSON.stringify({"posts": "failed"}));
+	}
+})
+
 app.listen(port, () => {
 	console.log(`Listening on port ${port}`);
 });

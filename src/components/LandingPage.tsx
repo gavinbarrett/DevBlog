@@ -3,9 +3,11 @@ import * as Router from 'react-router-dom';
 import { PostCard } from './PostCard';
 import './sass/LandingPage.scss';
 
-export const LandingPage = () => {
+export const LandingPage = ({changePosts, changeQuery}) => {
 	const [recent, updateRecent] = React.useState([]);
 	React.useEffect(() => {
+		changePosts(null);
+		changeQuery("");
 		getRecentPosts()
 	}, []);
 	const getRecentPosts = async () => {

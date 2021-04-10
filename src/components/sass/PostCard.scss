@@ -18,6 +18,7 @@
 
 .post-card > * {
 	padding-left: 1vw;
+	cursor: default;
 }
 
 .post-card:hover {
@@ -36,6 +37,7 @@
 	border-radius: 20px;
 	padding: 0.5rem;
 	margin: 0.5rem;
+	align-items: center;
 	overflow-x: hidden;
 }
 
@@ -45,4 +47,11 @@
 
 .metadata {
 	height: 30vh;
+}
+
+#tag-box {
+	width: 30vw;
+	height: 10vh;
+	display: flex;
+	overflow: hidden;
 }

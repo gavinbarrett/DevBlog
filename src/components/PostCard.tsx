@@ -27,10 +27,12 @@ export const PostCard = ({title, tags, hash, post_time}:postCard) => {
 	return (<div className="post-card" onClick={getDigest}>
 		<p className="post-title">{title}</p>
 		<div className="metadata">
-			{splitTags.length ? splitTags.map(elem => {
-				return <p className="post-tags">{elem}</p>
-			})
-			: ''}
+			<div id="tag-box">
+				{splitTags.length ? splitTags.map(elem => {
+					return <p className="post-tags">{elem}</p>
+				})
+				: ''}
+			</div>
 			<p className="post-time">{`Posted on ${post_time}`}</p>
 		</div>
 	</div>);

@@ -7,6 +7,19 @@ header {
 	align-items: center;
 }
 
+header input {
+	width: 40vw;
+	height: 5vh;
+	border: 0;
+	border-radius: 30px;
+	font-size: 1.2rem;
+	padding: 1.5rem;
+}
+
+header input:active, input:focus {
+	outline: none;
+}
+
 .title {
 	width: 30vw;
 	height: 15vh;
