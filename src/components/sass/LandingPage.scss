@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Londrina+Outline&display=swap');
-
 .landing-page {
 	width: 100vw;
 	background: #E1EDEB;
@@ -12,13 +10,14 @@
 	justify-content: center;
 	align-items: center;
 	text-align: center;
-	font-family: 'Lucida Console', monospace;
+	font-family: 'Nunito', sans-serif;
 	font-size: 4vw;
 	font-weight: bold;
-	color: #084237;
-	background-image: url('assets/future.jpg');
+	color: #F0EFEB;
+	//background-image: url('assets/future.jpg');
 	background-size: cover;
-	background-color: #67a695;
+	//background-color: #67a695;
+	background-color: #106958;
 	background-blend-mode: screen;
 }
 
@@ -90,12 +89,12 @@
 }
 
 .landing-hook {
-	width: 80vw;
+	width: 90vw;
 	height: 90vh;
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	text-align: center;
+	text-align: left;
 	animation: slide 0.28s ease-in-out forwards;
 }
 
@@ -109,8 +108,8 @@
 }
 
 .recent-title {
-	font-size: 2vw;
-	font-family: 'Inconsolata';
+	font-size: 2rem;
+	font-family: 'Lexend', sans-serif;
 	font-weight: bold;
 	padding-left: 2vw;
 	background: #E1EDEB;
@@ -133,8 +132,8 @@
 .see-posts > a {
 	width: 40vw;
 	height: 8vh;
-	font-family: 'Inconsolata';
-	font-size: 1.5rem;
+	font-family: 'Nunito', sans-serif;
+	font-size: 1.75rem;
 	font-weight: bold;
 	background: #106958;
 	color: white;

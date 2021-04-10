@@ -22,14 +22,11 @@ header {
 
 nav {
 	color: black;
-	font-size: 3.5vw;
+	font-size: 2rem;
 	padding-right: 2vw;
 	display: flex;
 	padding-right: 2vw;
 	color: #e1edeb;
-	@media (min-width: 800px) {
-		font-size: 2vw;
-	}
 }
 
 a {
@@ -44,6 +41,8 @@ a {
 }
 
 nav > a {
+	display: flex;
+	flex-direction: column;
 	color: #e1edeb;
 	font-family: 'Inconsolata';
 	cursor: default;
@@ -52,4 +51,21 @@ nav > a {
 
 nav > a:hover {
 	color: yellow;
+}
+
+nav > a hr {
+	width: 0vw;
+	height: 0vh;
+	background: #024b30;
+	border: 0;
+	border-radius: 10px;
+	color: yellow;
+	transition: all 0.30s ease-in-out;
+	content-visibility: hidden;
+}
+
+nav > a:hover > hr {
+	width: 6vw;
+	height: 1vh;
+	content-visibility: visible;
 }

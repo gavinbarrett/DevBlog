@@ -8,7 +8,7 @@
 	justify-content: space-between;
 	font-size: 1.5vw;
 	font-weight: bold;
-	font-family: 'Inconsolata';
+	font-family: 'Nunito', sans-serif;
 	color: #e1edeb;
 	transition: all 0.25s ease-in-out;
 	@media(min-width: 1000px) {
@@ -30,8 +30,17 @@
 	text-transform: capitalize;
 }
 
+.post-tags {
+	display: flex;
+	background: #024b30;
+	border-radius: 20px;
+	padding: 0.5rem;
+	margin: 0.5rem;
+	overflow-x: hidden;
+}
+
 .post-tags::before {
-	content: "#";
+	content: "# ";
 }
 
 .metadata {

@@ -11,13 +11,26 @@ type postCard = {
 
 export const PostCard = ({title, tags, hash, post_time}:postCard) => {
 	const [history, updateHistory] = React.useState(Router.useHistory());
+	const [splitTags, updateSplitTags] = React.useState([]);
+	React.useState(() => {
+		const split = tags.split(",");
+		const filtered = split.reduce((res, elem) => {
+			if (elem != "")
+				return [...res, elem.trim()];
+			return [...res];
+		}, []);
+		updateSplitTags(filtered);
+	}, []);
 	const getDigest = () => {
 		history.push(`/post/${hash}`);
 	}
 	return (<div className="post-card" onClick={getDigest}>
 		<p className="post-title">{title}</p>
 		<div className="metadata">
-			<p className="post-tags">{tags}</p>
+			{splitTags.length ? splitTags.map(elem => {
+				return <p className="post-tags">{elem}</p>
+			})
+			: ''}
 			<p className="post-time">{`Posted on ${post_time}`}</p>
 		</div>
 	</div>);
