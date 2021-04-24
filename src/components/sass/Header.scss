@@ -8,12 +8,18 @@ header {
 }
 
 header input {
-	width: 40vw;
-	height: 5vh;
+	width: 30vw;
+	height: 4vh;
 	border: 0;
 	border-radius: 30px;
 	font-size: 1.2rem;
-	padding: 1.5rem;
+	padding: 1rem;
+	@media (min-width: 800px) {
+		font-size: 2rem;
+		width: 40vw;
+		height: 5vh;
+		padding: 1.5rem;
+	}
 }
 
 header input:active, input:focus {
