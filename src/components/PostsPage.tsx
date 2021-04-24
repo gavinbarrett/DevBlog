@@ -5,7 +5,7 @@ import { Waiting } from './Waiting';
 import './sass/PostsPage.scss';
 
 const NoPosts = () => {
-	return (<div id="no-posts">
+	return (<div className="waiting">
 		<p>{"Couldn't find any posts."}</p>
 	</div>);
 }
