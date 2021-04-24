@@ -1,6 +1,8 @@
+// import env variables
+require('dotenv').config();
 module.exports = {
 	entry: './src/App.tsx',
-	mode: 'development',
+	mode: process.env.MODE,
 	module: {
 		rules: [
 			{
