@@ -1,12 +1,7 @@
 import * as React from 'react';
 import * as Router from 'react-router-dom';
+import { Waiting } from './Waiting';
 import './sass/Post.scss';
-
-const Waiting = () => {
-	return (<div className="waiting">
-		{"Waiting for post."}
-	</div>);
-}
 
 export const Post = () => {
 	const [loc, updateLoc] = React.useState(Router.useLocation());

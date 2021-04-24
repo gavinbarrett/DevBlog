@@ -24,30 +24,3 @@
 div.post-card > div.metadata {
 	margin-right: 10vw;
 }
-
-#waiting {
-	width: 100vw;
-	height: 85vh;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	font-size: 2.5rem;
-	font-family: 'Inconsolata', monospace;
-}
-
-#svg-wrapper {
-	width: 5vw;
-	height: 15vh;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	animation-name: spinLoader;
-	animation-duration: 1s;
-	animation-iteration-count: infinite;
-	animation-timing-function: ease-in-out;
-}
-
-@keyframes spinLoader {
-	from { transform: rotate(0deg) }
-	to { transform: rotate(-360deg) }
-}
