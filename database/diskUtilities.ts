@@ -1,3 +1,4 @@
+const database = require("./databaseUtilities.ts");
 const fs = require('fs');
 
 exports.readPostFromDisk = async (req, res) => {

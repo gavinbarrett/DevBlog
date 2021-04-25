@@ -3,7 +3,6 @@ const express = require("express");
 const app = express();
 const port = 8000;
 const { getQueriedPosts, getRecentPosts, readPostFromDisk, readAllPostsFromDisk } = require("./database/diskUtilities.ts");
-const database = require("./database/databaseUtilities.ts");
 
 // allow json parsing
 app.use(express.json());
