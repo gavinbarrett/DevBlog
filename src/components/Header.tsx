@@ -5,6 +5,11 @@ import './sass/Header.scss';
 export const Header = ({reference, changeQuery, posts, changePosts}) => {
 	const hist = Router.useHistory();
 	const ref = React.createRef();
+	const search = <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
+	  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+	  <circle cx="10" cy="10" r="7" />
+	  <line x1="21" y1="21" x2="15" y2="15" />
+	</svg>
 	const updateQuery = async event => {
 		if (event.target.value == "") {
 			changePosts([]);
@@ -39,7 +44,16 @@ export const Header = ({reference, changeQuery, posts, changePosts}) => {
 		}}>
 			{"/blog/urandom"}
 		</Router.Link>
-		<input ref={ref} placeholder="Search for posts" onChange={updateQuery}/>
+		<div className="input-box">
+			<div id="search-box">
+				<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" viewBox="0 0 24 24" stroke-width="1.5" stroke="#106958" fill="none" stroke-linecap="round" stroke-linejoin="round">
+				  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+				  <circle cx="10" cy="10" r="7" />
+				  <line x1="21" y1="21" x2="15" y2="15" />
+				</svg>
+			</div>
+			<input ref={ref} placeholder="Search for posts" onChange={updateQuery}/>
+		</div>
 		<nav>
 			<Router.Link to="/" onClick={() => {
 				ref.current.value = "";

@@ -1,4 +1,24 @@
-.waiting {
+.post-array > .waiting {
+	width: 100vw;
+	height: 50vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 2.5rem;
+	font-family: 'Inconsolata', monospace;
+}
+
+.posts-page > .waiting {
+	width: 100vw;
+	height: 85vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 2.5rem;
+	font-family: 'Inconsolata', monospace;
+}
+
+.displayed-post > .waiting {
 	width: 100vw;
 	height: 85vh;
 	display: flex;

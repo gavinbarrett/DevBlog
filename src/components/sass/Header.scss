@@ -93,3 +93,21 @@ nav > a:hover > hr {
 	height: 1vh;
 	content-visibility: visible;
 }
+
+#search-box {
+	width: 2rem;
+	height: 6vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.input-box {
+	width: 45vw;
+	border-radius: 50px;
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	background: #ffffff;
+	padding-left: 1rem;
+}
