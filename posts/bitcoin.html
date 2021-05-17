@@ -1,0 +1,60 @@
+<!-- Post title goes here -->
+<h3>Design Flaws in the Bitcoin Protocol</h3>
+
+<!--  Post time goes here -->
+<p>Posted on MM/DD/YYYY at HH:MM:SS AM/PM</p>
+
+<!-- Post tags go here -->
+<p>#Bitcoin, #cryptocurrency</p>
+
+<section>Since its release in early 2009, Bitcoin has become everything from a burnt-out meme to a powerful investment asset. Recent years have seen a rise in these assets for various reasons: some think they will hedge against inflation; others think it will make them rich beyond their wildest dreams; others, like me, want cool, secure, digital cash. In the wake of the recent crypto surge, something has become incredibly apparent about the newest crypto innovations: Bitcoin has some glaring flaws in comparison. Some of these issues are small and can either be overcome of ignored by Bitcoin users; some of these issues are more fundamental, and imply a difficult future for Bitcoin adaptation. As we will see, most of these problems can be traced back to Bitcoin's Proof of Work (PoW) consensus algorithm.</section>
+
+<div class="img-wrapper">
+	<img src="images/post_2/blockchain-structure.png"/>
+	<p class="image-desc">The standard structure of a PoW blockchain</p>
+</div>
+
+<section><b>Outline of the Environmental Critique</b></section>
+<section>One of the most common arguments you are likely to hear against the use of Bitcoin revolves around its environmental effects on the planet. Bitcoin uses a process referred to as "mining" in order to elect participants to update the status of the Bitcoin ledger. Each participant collects the information needed for the next block; this includes transaction data, the current time, and the cryptographic hash of the previous block (which allows us to link the blocks into a chain). Additionally, the participants compete by selecting a random number (called a nonce), appending it to the block data, and hashing it twice with the SHA-256 cryptographic hash function. If the subsequent hash is less than a moving target number, then the miner will be acknowledged as having produced a valid block. Clearly, this process is just a brute force, trial and error approach to electing a miner. While this works, it's a pretty inefficient way for computers to reach consensus.</section>
+<section>At the time of writing, the Bitcoin network uses approximately 151.16TWh of electricity per year.<sup>1</sup> The PoW algorithm modulates the target threshold that a miner has to fall below to have a valid block, and this is a function of the amount of hashes being executed on the network. This means that more validators, or at least more hashing power, will increase the target threshold of the PoW algorithm, making the problem even more difficult to solve.<sup>2</sup> It is partially this mechanism of modulating the difficulty that results in Bitcoin's inability to scale to a large number of users and transactions.</section>
+<section>An important thing for us to be aware of is that mining rigs aren't releasing massive amounts of CO2; they just use lots of electricity, some of which might come from inefficient and harmful fuel sources like coal powered plants. While the electricity consumption of Bitcoin is quite easy to estimate, the actual environmental impact of Bitcoin is determined by a wide range of factors, including the geographic location of the mining equipment and the various, contingent sources of electricity that might be powering them.</section>
+<section>There isn't much complexity to the PoW consensus paradigm, but interestingly there are some distinctions that might level the playing field of miners. As we will see, Bitcoin suffers from somewhat of a class distinction problem in that most Bitcoin users don't ever participate in the consensus process. One serious design flaw of Bitcoin was its choice in it's PoW hash function: SHA-256. Satoshi Nakamoto, the purported creator of Bitcoin, implied that Bitcoin was to be characterized by the notion "one-CPU, one-vote". The idea being that everyone would have a CPU available that could be used to mine Bitcoin. The obvious pitfall here is that people can easily own multiple CPUs, and there's a lot of diversity in the power available in modern CPUs. Not only that, Nakamoto seemed to have failed to take into account that the SHA-256 hash function can be easily parallelized in hardware, and doesn't take much memory to execute. This caveat allows miners to parallelize their hash computations on powerful GPUs as well as on custom, often patented ASIC (Application Specific Integrated Circuit) chips, which excel at performing the SHA-256 computations.</section>
+<section>Whereas Nakamoto probably intended for there to be a more equitable distribution in the mining hardware for Bitcoin, the PoW algorithm gives advantages to those with more computing power. As a result, we see miners constantly attempting to scale up and scale out their mining infrastructure, thereby taking over a larger portion of the total network hash rate. As we will see, this need for expensive mining hardware creates an important rift in the Bitcoin community: there are users, and there are users who are also miners. The separating off of miners into their own subset of the users in the network contributes substantially to the centralization of the mining process.</section>
+
+<div class="img-wrapper">
+	<img src="images/post_2/miningrig.jpg"/>
+	<p class="image-desc">A tiny cryptocurrency mining rig</p>
+</div>
+
+<section><b>Inefficient Aspects of Bitcoin</b></section>
+<section>Bitcoin has several problems related to energy efficiency and scalability. As has already been discussed, Bitcoin's PoW algorithm is very computationally inefficient. Not only does the PoW problem increase in difficulty as the level of mining increases, but the way that the algorithm works allows for there to be competing histories of the last few blocks of the blockchain. Because the Bitcoin ledger can "fork" into multiple possible histories, new transactions are considered mutable until the blocks are far enough into the ledger. It's not clear which depth would be ideal; theoretically someone could always come along with a tremendous amount of computing power and accelerate a stubbed blockchain fork until it is longer than the official blockchain. Since Bitcoin considers the longest chain to be the legitimate one, validators would end up mining off of this new chain. So real transaction finality doesn't occur immediately with Bitcoin, and when it does, it can still be pretty tenuous.</section>
+
+<section>Because Bitcoin's blockchain can fork into competing chains, there is a motivation to increase the difficulty of the PoW algorithm such that blocks are validated at a regular enough pace, but that the PoW problem isn't so easy to solve that large numbers of validators produce valid candidate blocks at the same time, thereby introducing massive amounts of forks, and uncertainty, into the blockchain.
+</section>
+
+<div class="img-wrapper">
+	<img src="images/post_2/ledgerfork.png">
+	<p class="image-desc">Competing histories from two miners; ultimately one will be selected</p>
+</div>
+
+<section>Subsequently, the Bitcoin protocol was designed to validate new blocks on average every ten minutes. That means one block every minute, multiplied by the block depth you believe is sufficient to call your transaction immutable. Currently, the supposed ideal depth is six blocks deep, so one can expect to wait approximately an hour before their Bitcoin transaction is considered finalized.</section>
+
+<section>So there's one aspect of Bitcoin that is a deficiency; it's slow at processing and finalizing transactions and does so in an inefficient and expensive way, both in virtue of the difficulty of its PoW algorithm, as well as the requirement of spacing out transactions by ten minutes to avoid block disputes. One could imagine engineering a cryptocurrency that reaches consensus in a quicker and more efficient manner, and indeed, many such cryptos have been produced.</section>
+
+<section><b>Broader Socio-economic Concerns: Material Resources and Economic</b></section>
+<section>Since PoW is construed as a game where validators compete to produce valid hashes before others, there is an incentive to scale your computers as much as possible to control a larger portion of the total network hash power. Miners will then buy up as many computing chips as they can, in order to increase their net hash rate; this drives demand for electricity, GPUs, and ASIC chips. Unfortunately, the PoW model will always imply a competition among computing resources, and adding additional computing power to a mining operation will <i>always</i> be an option so long as there are resources for producing them. This wouldn't be much of a concern if these components were cheap, but they require an amazing amount of technical capabilities to manufacture, and are composed of expensive, often rare conflict minerals such as <a src="https://en.wikipedia.org/wiki/Coltan#Ethics_of_mining_in_the_Democratic_Republic_of_Congo">coltan</a>. When we are contemplating the vast socio-economic effects of the PoW paradigm, we must take into account how PoW's core incentivization of computing power affects the world market.</section>
+
+<section>This market for high end processors ironically directs the Bitcoin mining community towards centralization. With the increasing interest in Bitcoin, the network hash rate has risen tremendously, and would-be laptop miners have been priced out of the mining market. If you tried mining Bitcoin on a laptop in 2021, it would be almost impossible to actually mine a valid block, as your net hash rate is incredibly small proportional to others. So all of that energy spent will ultimately go to waste. The only real options you have are to either 1). join a staking pool, in which you will receive a small fraction of the pool's payout, but this likely won't even cover the electricity costs. Or, 2). you can scale your computer up and out for thousands of dollars to be more on par with other smaller miners.</section>
+
+<section>Moreso, operating a mining rig is not something everyone knows how to do. It takes some experience with computer networking and system administration to be able to maintain any realistic mining operation. So while mining purports to be open and available to everyone, it actually creates a particular economy of scale in the mining community, such that you can't really join and expect to do well without at least a few thousand dollars in capital.</section>
+
+<section><b>Crypto Beyond PoW</b></section>
+
+<section><b>References</b></div>
+<ol>
+	<section><li><a href="https://cbeci.org/">Cambridge Bitcoin Electricity Consumption Index</a></li></section>
+	<section><li><a href="https://bitcoin.org/bitcoin.pdf">Bitcoin Whitepaper</a></li></section>
+	<section><li></li></section>
+	<section><li></li></section>
+</ol>
+</section>
