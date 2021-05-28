@@ -19,14 +19,15 @@
 <section>At the time of writing, the Bitcoin network uses approximately 151.16TWh of electricity per year.[1] The PoW algorithm modulates the target threshold that a miner has to fall below to have a valid block, and this is a function of the amount of hashes being executed on the network. This means that an increase in the amount of hashing power will constrain the target threshold of the PoW algorithm, making the problem even more difficult to solve.[2] It is partially this mechanism of modulating the difficulty that results in Bitcoin's inability to scale to a large number of users and transactions.</section>
 <section>It's important to point out that mining isn't <i>necessarily</i> releasing massive amounts of CO2. It uses a lot of electricity, some of it coming from inefficient and harmful fuel sources like coal-powered plants. While the electricity consumption of Bitcoin is quite easy to estimate, the actual carbon footprint is much more elusive. is determined by a wide range of factors, including the geographic location of the mining equipment, the capabilities and efficiency of the mining equipment, and the various, contingent sources of electricity that might be powering them.</section>
 
-<div class="img-wrapper">
-	<img src="images/post_2/miningrig.jpg"/>
-	<p class="image-desc">A tiny cryptocurrency mining rig</p>
-</div>
-
 <!-- As we will see, Bitcoin suffers from somewhat of a class distinction problem in that most Bitcoin users don't ever participate in the consensus process. One serious design flaw of Bitcoin was its choice in it's PoW hash function: SHA-256. -->
 
 <section>Satoshi Nakamoto, the purported creator of Bitcoin, characterized Bitcoin with the notion "one-CPU-one-vote".[3] The idea being that everyone would have a CPU available that could be put to work to secure the Bitcoin network in a decentralized way. The obvious shortcoming here is that people can easily own multiple CPUs, and there's a lot of diversity in the power available in modern CPUs and semiconductors. Nakamoto also seems to have failed to account for SHA-256's ability to be easily parallelized in hardware. This allows miners to parallelize their hash computations on powerful GPUs as well as on custom, often patented ASIC (Application Specific Integrated Circuit) chips, which excel at performing the SHA-256 computations.</section>
+
+<div class="img-wrapper">
+	<img src="images/post_2/miningrig.jpg"/>
+	<p class="image-desc">A small mining rig</p>
+</div>
+
 <section>Whereas Nakamoto probably intended for there to be a more equitable distribution in the mining hardware for Bitcoin, the PoW algorithm gives advantages to those with more computing power. As a result, we see miners constantly scaling their mining equipment up and out, thereby taking over a larger portion of the total hash rate. As we will see, this need for expensive mining hardware creates an important rift in the Bitcoin community: there are normal users, and then there are miners. The demarcation of miners into their own subset of the users in the network contributes substantially to the centralization of the mining process.</section>
 
 <section>A common objection to the environmental effects of Bitcoin I like to call the "Green Bitcoin Defense". This argument begins by accepting the premise that Bitcoin could be detrimental to the environment in virtue of CO2-producing electricity sources. One would then claim that these electricity sources can be moved to renewable energy sources, thereby eliminating the negative environmental effects. The argument roughly follows this pattern:</section>
@@ -48,7 +49,7 @@
 
 <div class="img-wrapper">
 	<img src="images/post_2/ledgerfork.png">
-	<p class="image-desc">Competing histories from two miners; ultimately one will be selected</p>
+	<p class="image-desc">Competing histories from two miners</p>
 </div>
 
 <section>Subsequently, the Bitcoin protocol was designed to validate new blocks on average every ten minutes. That means one block every ten minutes, multiplied by the block depth you believe is sufficient to call your transaction immutable. Currently, the supposed ideal depth is six blocks deep, so one can expect to wait approximately (10 mins * 6 blocks) = 1 hour before their Bitcoin transaction is considered finalized.</section>
