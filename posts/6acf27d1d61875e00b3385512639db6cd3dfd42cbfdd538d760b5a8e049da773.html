@@ -1,0 +1,105 @@
+<!-- Post title goes here -->
+<h3>Design Flaws in the Bitcoin Protocol</h3>
+
+<!--  Post time goes here -->
+<p>Posted on 06/04/2021 at 04:05:00 PM</p>
+
+<!-- Post tags go here -->
+<p>#cryptocurrency</p>
+
+<section><b>Introduction</b></section>
+<section>Since its release in early 2009, Bitcoin has been everything from a internet meme to a lucrative investment asset. Proponents of Bitcoin believe in it for a multitude of reasons. Some think it will be a hedge against the inflation of fiat currencies. Others are looking to gamble in their volatile markets. Others just want secure and convenient digital cash. With the advent of newer cryptocurrencies such as Ethereum, blockchains are being used as entire application platforms. In the wake of the crypto surge of early 2021, something has become increasingly clear about Bitcoin: it has some glaring flaws in comparison to newer projects. Some of these flaws are small and can be overcome or ignored. Others are more fundamental, and cast uncertainty on the future of Bitcoin. As we will see, most of these problems can be traced back to Bitcoin's proof of work (PoW) consensus algorithm.</section>
+
+<section><b>The Environmental Critique</b></section>
+<section>One of the most common arguments you'll hear against Bitcoin involves its effect on the environment. Bitcoin uses a process referred to as "mining" in order to elect participants to update the status of the Bitcoin ledger. Each participant collects their information needed for the next block; this includes transaction data, the current time, and the cryptographic hash of the previous block, which allows us to link the blocks into a chain. Additionally, the participants compete by brute-force searching for a random number (called a nonce), appending it to the block data, and hashing all of this twice with the SHA-256 hash function. If the result is less than a certain target number, then the miner found a valid nonce and is authorized to write the next block. This process relies on a trial-and-error approach to electing a miner, so the vast majority of computing power used is wasted. While this method works, it's a very inefficient way for the network to reach consensus.</section>
+<section>At the time of writing, the Bitcoin network uses approximately 117.6TWh of electricity per year.[1] That's approximately 0.54% of all electricity being consumed by the world, and a few terawatt-hours more than countries like the Philippines and the Netherlands use per year.[2] Its power consumption has grown so much over time because its design doesn't allow for it to scale well for a large number of validators. Its proof of work algorithm adjusts the target number that a miner has to fall below to have a valid block. This adjustment is a function of the amount of hashes being executed on the network, which means that an increase in the hash rate will lower the target number of the algorithm, making the problem even more difficult to solve.[3] This contributes substantially to Bitcoin's energy problems, since lowering the target number lowers the probability that a hash will be valid. Miners will have to compute more hashes on average, and thus use more energy, in order to mine a valid block.</section>
+
+<div class="img-wrapper">
+	<img src="images/post_2/blockchain-structure.png"/>
+	<p class="image-desc">The standard structure of a PoW blockchain</p>
+</div>
+
+<section>It's important to mention that mining doesn't <i>inherently</i> have a high carbon footprint. It uses a lot of electricity, a decent amount likely comes from inefficient and harmful fuel sources like coal-powered plants. While the electricity consumption is quite easy to estimate, the actual carbon footprint and broader environmental impact is much more elusive. It's determined by a wide range of factors, including the geographic location of the mining equipment and the energy regulations governing its use, the capabilities and efficiency of the particular mining equipment, and the various, contingent sources of electricity that are powering these operations.</section>
+
+<section>Satoshi Nakamoto, the purported creator of Bitcoin, characterized Bitcoin with the notion "one-CPU-one-vote".[4] The idea being that everyone would have a CPU available that could be put to work to secure the Bitcoin network in a decentralized way. The obvious shortcoming here is that people can easily own multiple CPUs, and there's a lot of diversity in the power available in modern CPUs and semiconductors. Nakamoto also failed to account for SHA-256's ability to be parallelized in hardware. This allows miners to execute tremendous amounts of hash computations on powerful GPUs as well as on custom, often patented ASIC chips, which were designed for and excel at these mining computations.</section>
+
+<div class="img-wrapper">
+	<img src="images/post_2/miningrig.jpg"/>
+	<p class="image-desc">A small mining rig</p>
+</div>
+
+<section>Whereas Nakamoto probably intended for there to be a more equitable distribution in the hash power behind Bitcoin, the proof of work algorithm gives advantages to those with more computing power. As a result, we see miners constantly scaling their equipment, thereby taking over a larger portion of the total hash rate. As we will see, this need for expensive mining hardware creates an important rift in the Bitcoin community: there are normal users, and then there are miners who have thousands invested in hardware. This disparity in the hardware capabilities of users contributes substantially to the centralization of the network. Within the last three years, it's been estimated that anywhere from 60-80% of the total Bitcoin hash rate comes from China.[5][6]</section>
+
+<section><b>What About Green Bitcoin?</b></section>
+
+<section>Regarding the environmental critique, there's a common objection to it that I refer to as "Green Bitcoin". This objection begins by accepting the premise that Bitcoin could be detrimental to the environment in virtue of its CO2-producing electricity sources. A Green Bitcoiner would claim that these electricity sources can be moved to renewable sources, thereby eliminating the negative environmental effects. The argument roughly follows this pattern:</section>
+<section><b>1.</b> If <b>X</b> is powered entirely by renewables, then <b>X</b> has a negligible effect on the environment</section>
+<section><b>2.</b> Bitcoin is powered entirely by renewables</section>
+<section><b>&#8756</b> Bitcoin has a negligible effect on the environment</section>
+
+<section>This argument is valid, but right now Bitcoin isn't powered entirely by renewables, so the conclusion doesn't follow. The truth of the conclusion relies on Bitcoin's hypothetical switch to renewable energy. Even if this happens, the proof of work algorithm would still imply massive electricity costs. Proponents of Bitcoin will use this objection to dodge any criticism of the environmental effects. This is an insidious argument since allows defenders to defer to some future where Bitcoin actually did go green. It operates more as a mechanism for defense and deflection than as an honest approach to fixing the electricity demands of Bitcoin. Why should we be satisfied with less efficient, more expensive technology, when we could engineer something that doesn't carry the computational overhead of proof of work?</section>
+
+<section><b>The Engineering Critique</b></section>
+<section>I believe a better argument exists that preempts the Green Bitcoin defense and focuses on the real issue at heart. This argument is directed at the <i>algorithmic efficiency</i> of Bitcoin's proof of work, rather than any environmental effects of its power sources.</section>
+
+<section>Not only does the difficulty of the proof of work algorithm increase as the hash rate increases, but the way that the algorithm works allows for there to be competing histories of the most recent blocks in the chain. Because the ledger can "fork" into distinct possible histories, new blocks are considered mutable until they're sufficiently deep in the blockchain.[7] It's not clear which depth would be ideal; theoretically someone could always come along with a tremendous amount of computing power and grow a fork until it's longer than the official blockchain. Since Bitcoin considers the longest chain to be the legitimate one[8], validators would end up mining off of this forked chain. So real transaction finality doesn't occur immediately with Bitcoin and, when it does, can still be pretty tenuous until more blocks are added.</section>
+
+<section>Since forking of the ledger is a possibility, there's a motivation to increase the difficulty of the proof of work algorithm so that blocks are validated at a regular enough pace. But we also want to ensure that the problem isn't so easy to solve that large numbers of validators produce valid candidate blocks at the same time. This would introduce massive amounts of forks, and uncertainty, into the blockchain.
+</section>
+
+<div class="img-wrapper">
+	<img src="images/post_2/blockrace1t.png">
+	<p class="image-desc">Competing histories from two miners</p>
+</div>
+
+<section>Subsequently, the Bitcoin protocol was designed to find a new block on average every ten minutes. But since its ledger can fork, this time only relates to block <i>proposal</i> and not <i>finalization</i>. Finalizing a transaction usually takes more work, since the network will fork and reconcile disparities by choosing whichever fork becomes the longest. Users must wait for their blocks to be deep enough in the chain that they're confident they'd be computationally infeasible to redo. Many Bitcoin client apps use a depth of six blocks, so one can expect to wait approximately 10 minutes * 6 blocks = 1 hour before their Bitcoin transaction is considered confirmed.</section>
+
+<section>One thing I'll say about this approach to confirmation is that it relies on block depth when really we should also be concerned with our block's depth from the blocks of <i>other forks</i>. It's possible that an adversary with a significantly high hash rate can mine their own independent chain where the last 6+ blocks are distinct. This allows for multiple blocks of the same height to be confirmed. </section>
+
+<div class="img-wrapper">
+	<img src="images/post_2/blockrace2t.png">
+	<p class="image-desc">Two distinct blocks are "confirmed"</p>
+</div>
+
+<section>The first distinct blocks in each chain will be "confirmed" in virtue of their depth in the chain. Even though they're confirmed, one chain will soon outpace the other. Let's say the adversary chain (red) outpaces the honest chain (blue). Honest miners would then switch to mining on the adversary chain, invalidating the blocks in the honest chain.</section>
+
+<div class="img-wrapper">
+	<img src="images/post_2/blockrace3t.png">
+	<p class="image-desc">One fork wins, invalidating the other's confirmed block</p>
+</div>
+
+<section>So we have several aspects of Bitcoin we can characterize as deficient: it's slow at finalizing transactions and is inefficient and expensive at doing so. It relies on computing power to reach consensus by sheer competition. Notice that with Bitcoin your transaction isn't truly immutable; it only becomes exponentially harder to redo the proof of work. One could imagine engineering a cryptocurrency that reaches consensus in a quicker and more efficient manner, and indeed, many such cryptos have been created. The most innovative of them move away from the proof of work paradigm and its dependency on computing power.</section>
+
+<section><b>Crypto-Socioeconomics</b></section>
+<section>Since proof of work is construed as a game where validators compete to produce valid hashes before others, there's an incentive to scale your computers as much as possible to control a larger portion of the hash rate. Miners will buy up as many computing chips as they can, in order to increase their own hash rate; this drives demand for electricity, GPUs, and ASIC chips. Unfortunately, the proof of work model will always imply a competition among computing resources, and adding additional computing power to a mining operation will <i>always</i> be an option so long as there are resources for producing them. Theoretically, there is no cap on the amount of computing power that can be allocated to Bitcoin.</section>
+
+<section>This wouldn't be much of a concern if electricity and hardware components were cheap, plentiful, and didn't have ethical and environmental costs. But electricity needs to come from energy sources and the components require rare resources and technical capabilities to manufacture. When we're contemplating the vast socioeconomic effects of the proof of work paradigm, we must take into account how it's core incentivization of computing power affects the world market.</section>
+
+<section>This market for high end processors ironically directs the Bitcoin mining community towards centralization. With the increasing interest in Bitcoin, the network hash rate has risen tremendously, and would-be laptop miners have been priced out of the mining market. If you tried mining Bitcoin on a laptop in 2021, it would be almost impossible to actually mine a valid block. Your hash rate would be incredibly small in proportion to others; all of those hashes would go to waste. You really only have two options: First, you could join a staking pool, in which you will receive a small fraction of the pool's payout. But this wouldn't even cover your electricity costs. Second, you could scale your computer for thousands of dollars to be more competitive with other miners. But the latter solution isn't feasible for most hobbyists and retail investors either.</section>
+<section>This prices smaller miners out of the market and helps to consolidate the hash rate with those who can afford the upfront costs of mining. This disparity in crypto-wealth is reflective of a broader disparity in wealth more generally. Almost all crypto projects give precedence to those with more resources, and therefore, more capital. Cryptocurrency projects never claimed to solve this problem, and it very well might be beyond the scope of the technology to address such deep socioeconomic issues. In any case, recent developments in the crypto space might be able to ameliorate some of the bigger problems that arise from proof of work consensus.</section>
+
+<section><b>Crypto Beyond Proof of Work</b></section>
+<section>Fortunately, there are some alternatives to proof of work that have been invented since the advent of Bitcoin. The crypto community seems to largely have favored the newer, more efficient proof of stake (PoS) model. Instead of relying on the proportions of computing power on the network, proof of stake systems reach consensus through a process of election and voting based on the participants' ownership of the native token. Ethereum, the world's second largest crypto by market cap, is currently in the process of transitioning from a proof of work to a proof of stake model. In the future, Ethereum will be secured by people in virtue of their ownership of ETH, rather than their ownership of hash power. In the proof of work model, a validator would hold approximately 1% of the power on the blockchain so long as they're responsible for approximately 1% of the hash rate. Proof of stake, by contrast, would require someone to own 1% of all of the <i>online money supply</i> to have 1% of the power. A few things can be observed from this change.</section>
+
+<section>In the proof of stake model, the resource you need control over is virtual. These coins are much easier to produce and manage since they don't need expensive materials to be created, unlike mining equipment. Instead of affecting the electricity and GPU markets, proof of stake cryptos really only affect the market as it relates to their native coin. Additionally, with proof of work we expend massive amounts of energy to select a validator; proof of stake cryptos perform clever, low power computations to select someone. With proof of work, we would expect that the more adoption the crypto sees, the more energy will be expended mining it. With proof of stake, validators simply stake their coins by joining the consensus protocol. There's no incentive to increase your computing power, since additional power won't give you an advantage in consensus at all. Subsequently, the proof of stake model is much faster, less expensive, and far more efficient, while functionally accomplishing the same goal of securely selecting a validator.</section>
+
+<section>Additionally, it's often much easier for the average investor to participate in consensus and help decentralize a proof of stake network. Once you have some coins, you can usually delegate them or stake them with minimal effort and computing equipment. Since power is manifested in token ownership, instead of hash power, the proof of stake model makes it much easier for people who hold small amounts of coins to participate without buying expensive hardware.</section>
+
+<section><b>Conclusion</b></section>
+
+<section>Bitcoin hasn't changed too much since its initial release, but it's inspired a huge wave of innovation in trustless, distributed computing systems. Many of these innovations add new functionality to blockchain networks, but the most important innovations address the major inefficiencies of proof of work cryptos. Among these are slow transaction times, expensive fees, and most importantly, the insane electricity requirements and scaling issues of the proof of work paradigm. It relies on hash power from physical computer components to create virtual coins. Subsequently, the demand for higher hash rates heavily affects the semiconductor market, and create barriers of entry for hobbyists and retail investors.</section>
+
+<section>Luckily, these deficiencies have given rise to tremendous research and numerous innovations, allowing newer blockchain technology to eschew the computational bottlenecks of proof of work. At the time of writing, Ethereum is quickly approaching it's transition to proof of stake. Whether or not Bitcoin will follow suit and adapt in this increasingly competitive market is still unknown. Technology is changing at a rapid pace, and Bitcoin's fundamentals are at risk of being left behind. Proof of work, which was once a novel approach for reaching consensus, might very well be the death knell of Bitcoin.</section>
+
+<section class="references"><b>References</b></div>
+<ol>
+	<li><section><a href="https://cbeci.org/">Cambridge Bitcoin Electricity Consumption Index. Accessed Jun 4th, 2021</a></section></li>
+	<li><section><a href="https://cbeci.org/cbeci/comparisons">Cambridge Bitcoin Electricity Consumption Index: Comparisons. Accessed Jun 4th, 2021</a></section></li>
+	<li><section><a href="https://bitcoin.org/bitcoin.pdf">Nakamoto, Satoshi, "Bitcoin: A Peer-to-Peer Electronic Cash System", p3. Accessed May 28th, 2021</a></section></li>
+	<li><section><a href="https://bitcoin.org/bitcoin.pdf">Ibid, p3. Accessed May 28th, 2021</a></section></li>
+	<li><section><a href="https://www.goldmansachs.com/insights/pages/crypto-a-new-asset-class-f/report.pdf">Goldman Sachs, "Crypto: A New Asset Class?", p19. Accessed May 30th, 2021</a></section></li>
+	<li><section><a href="https://arxiv.org/abs/1810.02466">Kaiser, Ben, Mireya Jurado, Alex Ledger, "The Looming Threat of China: An Analysis of Chinese Influence on Bitcoin", p5. Accessed Jun 1st, 2021</a></section></li>
+	<li><section><a href="https://bitcoin.org/bitcoin.pdf">Nakamoto, Satoshi, "Bitcoin: A Peer-to-Peer Electronic Cash System", p7. Accessed Jun 4th, 2021</a></section></li>
+	<li><section><a href="https://bitcoin.org/bitcoin.pdf">Ibid, p3. Accessed Jun 4th, 2021</a></section></li>
+</ol>
+</section>
