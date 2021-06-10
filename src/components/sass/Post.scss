@@ -29,6 +29,7 @@
 	font-size: 1.2rem;
 	font-family: 'Inconsolata', monospace;
 	width: 85vw;
+	line-height: 2.25rem;
 	@media (min-width: 600px) {
 		font-size: 2rem;
 	}
@@ -42,6 +43,7 @@
 	align-items: center;
 	margin-top: 6vh;
 	margin-bottom: 6vh;
+	font-size: 1.6rem;
 	font-family: 'Inconsolata', monospace;
 	font-weight: bold;
 	color: #106958;
@@ -69,6 +71,7 @@
 	}
 }
 
+
 p.indent-1 {
 	margin-left: 3vw;
 }
@@ -87,4 +90,23 @@ p.indent-3 {
 	@media (min-width: 600px) {
 		width: 70vw;
 	}
+}
+
+p.image-desc {
+	width: 85vw;
+	height: 8vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+section a {
+	width: 85vw;
+	display: flex;
+	justify-content: flex-start;
+}
+
+hr {
+	width: 80vw;
+	height: 4px;
 }

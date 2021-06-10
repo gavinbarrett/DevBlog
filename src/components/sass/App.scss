@@ -1,7 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Londrina+Outline&family=Lexend:wght@100&family=Nunito:wght@300&display=swap');
 
-*::-moz-selection { background: #024B30; }
-*::selection { background: #024B30; }
+*::-moz-selection {
+	background: #024B30;
+	color: white;
+}
+*::selection {
+	background: #024B30;
+	color: white;
+}
 
 * {
 	margin: 0;

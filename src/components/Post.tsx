@@ -8,7 +8,7 @@ export const Post = () => {
 	const [postContent, updatePostContent] = React.useState();
 	React.useEffect(() => {
 			getPost();
-	}, []);
+	}, [loc]);
 	const pad = (char) => {
 		if (char.length == 1)
 			return '0' + char;
@@ -24,6 +24,7 @@ export const Post = () => {
 		return strdigest.split("").map(c => pad(c.charCodeAt(0).toString(16))).join("");
 	}
 	const getPost = async () => {
+		console.log('Getting post');
 		// extract hash
 		const digest = loc.pathname.split("/")[2];
 		// check for valid 256 bit hash
